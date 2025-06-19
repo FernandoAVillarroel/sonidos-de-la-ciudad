@@ -4,120 +4,111 @@
   <meta charset="UTF-8">
   <title>Sonidos de la Ciudad – Cronograma</title>
   <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- 1. Cabecera con logo y título -->
+  <!-- Cabecera con logo y título -->
   <header>
     <h1>
-      <img
-        src="assets/img/logo.png"
-        alt="Logo Sonidos de la Ciudad"
-        width="150"
-        align="middle"
-      >
+      <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo logo-header">
       Sonidos de la Ciudad
     </h1>
     <p>Una experiencia sonora que recorre los rincones de Santiago del Estero.</p>
   </header>
 
-  <!-- 2. Menú de navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="artistas.html">Artistas</a></li>
-      <li><a href="cronograma.html">Cronograma</a></li>
-      <li><a href="entradas.html">Entradas</a></li>
-      <li><a href="ubicacion.html">Ubicación</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- Menú de navegación sticky con iconos -->
+  <nav class="menu">
+    <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo logo-menu">
+    <a href="index.html" class="menu__item"><i class="fa fa-home"></i> Inicio</a>
+    <a href="artistas.html" class="menu__item"><i class="fa fa-microphone"></i> Artistas</a>
+    <a href="cronograma.html" class="menu__item"><i class="fa fa-calendar"></i> Cronograma</a>
+    <a href="entradas.html" class="menu__item"><i class="fa fa-ticket"></i> Entradas</a>
+    <a href="ubicacion.html" class="menu__item"><i class="fa fa-map-marker-alt"></i> Ubicación</a>
+    <a href="contacto.html" class="menu__item"><i class="fa fa-envelope"></i> Contacto</a>
   </nav>
 
-  <!-- 3. Contenido principal: Cronograma -->
-  <main>
+  <!-- Contenido principal -->
+  <main class="container">
     <section id="cronograma">
       <h2>Cronograma</h2>
 
-      <h3>Jueves 2 de Febrero</h3>
-      <ol>
-        <li>Sergio Galleguillo</li>
-        <li>El Chaqueño Palavecino</li>
-        <li>Dúo Coplanacu</li>
-        <li>Fabricio Rodríguez</li>
-        <li>Homenaje a Los Sin Nombre</li>
-        <li>Mario Álvarez Quiroga</li>
-        <li>Demi Carabajal</li>
-        <li>Iván Camaño</li>
-        <li>Los Chunkos</li>
-        <li>Y muchos más</li>
-      </ol>
+      <div class="section cronograma-dia cronograma-jueves">
+        <h3><i class="fa fa-calendar-day"></i> Jueves 2 de Febrero</h3>
+        <ul class="cronograma-lista">
+          <li><span class="hora">21:00</span> <strong>Sergio Galleguillo</strong> <i class="fa fa-star"></i></li>
+          <li><span class="hora">21:50</span> El Chaqueño Palavecino</li>
+          <li><span class="hora">22:40</span> Dúo Coplanacu</li>
+          <li><span class="hora">23:20</span> Fabricio Rodríguez</li>
+          <li><span class="hora">00:00</span> Homenaje a Los Sin Nombre</li>
+          <li><span class="hora">00:30</span> Mario Álvarez Quiroga</li>
+          <li><span class="hora">01:00</span> Demi Carabajal</li>
+          <li><span class="hora">01:30</span> Iván Camaño</li>
+          <li><span class="hora">02:00</span> Los Chunkos</li>
+          <li><span class="hora">02:30</span> Y muchos más</li>
+        </ul>
+      </div>
 
-      <h3>Viernes 3 de Febrero</h3>
-      <ol>
-        <li>Raly Barrionuevo</li>
-        <li>Néstor Garnica</li>
-        <li>Peteco Carabajal</li>
-        <li>Vislumbre del Esteko</li>
-        <li>Américo</li>
-        <li>Homenaje a Jacinto Piedra</li>
-        <li>Juan Saavedra</li>
-        <li>Coco Banegas</li>
-        <li>Tantta</li>
-        <li>Y muchos más</li>
-      </ol>
+      <div class="section cronograma-dia cronograma-viernes">
+        <h3><i class="fa fa-calendar-day"></i> Viernes 3 de Febrero</h3>
+        <ul class="cronograma-lista">
+          <li><span class="hora">21:00</span> <strong>Raly Barrionuevo</strong> <i class="fa fa-star"></i></li>
+          <li><span class="hora">21:50</span> Néstor Garnica</li>
+          <li><span class="hora">22:40</span> Peteco Carabajal</li>
+          <li><span class="hora">23:20</span> Vislumbre del Esteko</li>
+          <li><span class="hora">00:00</span> Américo</li>
+          <li><span class="hora">00:30</span> Homenaje a Jacinto Piedra</li>
+          <li><span class="hora">01:00</span> Juan Saavedra</li>
+          <li><span class="hora">01:30</span> Coco Banegas</li>
+          <li><span class="hora">02:00</span> Tantta</li>
+          <li><span class="hora">02:30</span> Y muchos más</li>
+        </ul>
+      </div>
 
-      <h3>Sábado 4 de Febrero</h3>
-      <ol>
-        <li>Los Manseros Santiagueños</li>
-        <li>Los Carabajal</li>
-        <li>Horacio Banegas</li>
-        <li>Por siempre Tucu</li>
-        <li>Las Sacha Guitarras</li>
-        <li>Florencia Paz</li>
-        <li>Los Salteños del Río</li>
-        <li>Meta Chango</li>
-        <li>Ramón Álvarez</li>
-        <li>Martín Reynoso (homenaje a “Fatiga”)</li>
-        <li>Y muchos más</li>
-      </ol>
+      <div class="section cronograma-dia cronograma-sabado">
+        <h3><i class="fa fa-calendar-day"></i> Sábado 4 de Febrero</h3>
+        <ul class="cronograma-lista">
+          <li><span class="hora">21:00</span> <strong>Los Manseros Santiagueños</strong> <i class="fa fa-star"></i></li>
+          <li><span class="hora">21:50</span> Los Carabajal</li>
+          <li><span class="hora">22:40</span> Horacio Banegas</li>
+          <li><span class="hora">23:20</span> Por siempre Tucu</li>
+          <li><span class="hora">00:00</span> Las Sacha Guitarras</li>
+          <li><span class="hora">00:30</span> Florencia Paz</li>
+          <li><span class="hora">01:00</span> Los Salteños del Río</li>
+          <li><span class="hora">01:30</span> Meta Chango</li>
+          <li><span class="hora">02:00</span> Ramón Álvarez</li>
+          <li><span class="hora">02:30</span> Martín Reynoso (homenaje a “Fatiga”)</li>
+          <li><span class="hora">03:00</span> Y muchos más</li>
+        </ul>
+      </div>
 
-      <h3>Domingo 5 de Febrero</h3>
-      <ol>
-        <li>Los Tekis</li>
-        <li>Cuti y Roberto Carabajal</li>
-        <li>Dúo Orellana Lucca</li>
-        <li>Destino San Javier</li>
-        <li>Marcelo Toledo</li>
-        <li>Marcelo Mitre</li>
-        <li>La Callejera</li>
-        <li>Franco Ramírez</li>
-        <li>Homenaje a Juan Carlos Carabajal</li>
-        <li>Carlos Carabajal</li>
-        <li>Y muchos más</li>
-      </ol>
+      <div class="section cronograma-dia cronograma-domingo">
+        <h3><i class="fa fa-calendar-day"></i> Domingo 5 de Febrero</h3>
+        <ul class="cronograma-lista">
+          <li><span class="hora">21:00</span> <strong>Los Tekis</strong> <i class="fa fa-star"></i></li>
+          <li><span class="hora">21:50</span> Cuti y Roberto Carabajal</li>
+          <li><span class="hora">22:40</span> Dúo Orellana Lucca</li>
+          <li><span class="hora">23:20</span> Destino San Javier</li>
+          <li><span class="hora">00:00</span> Marcelo Toledo</li>
+          <li><span class="hora">00:30</span> Marcelo Mitre</li>
+          <li><span class="hora">01:00</span> La Callejera</li>
+          <li><span class="hora">01:30</span> Franco Ramírez</li>
+          <li><span class="hora">02:00</span> Homenaje a Juan Carlos Carabajal</li>
+          <li><span class="hora">02:30</span> Carlos Carabajal</li>
+          <li><span class="hora">03:00</span> Y muchos más</li>
+        </ul>
+      </div>
 
-      <h3>Lunes 6 de Febrero</h3>
-      <ol>
-        <li>Abel Pintos</li>
-        <li>El “Indio” Lucio Rojas</li>
-        <li>Roxana Carabajal</li>
-        <li>Claudio Acosta</li>
-        <li>Proyección Salamanca</li>
-        <li>Duende Garnica</li>
-        <li>La Cantada</li>
-        <li>Pablo Carabajal</li>
-        <li>Marcelo Gómez</li>
-        <li>Hugo Torrez (homenaje a Leocadio Torrez)</li>
-        <li>Y muchos más</li>
-      </ol>
-    </section>
-  </main>
-
-  <!-- 4. Pie de página -->
-  <footer>
-    <p>&copy; 2025 Festival Sonidos de la Ciudad</p>
-    <p><a href="mailto:info@festival.com">info@festival.com</a></p>
-  </footer>
-
-</body>
-</html>
+      <div class="section cronograma-dia cronograma-lunes">
+        <h3><i class="fa fa-calendar-day"></i> Lunes 6 de Febrero</h3>
+        <ul class="cronograma-lista">
+          <li><span class="hora">21:00</span> <strong>Abel Pintos</strong> <i class="fa fa-star"></i></li>
+          <li><span class="hora">21:50</span> El “Indio” Lucio Rojas</li>
+          <li><span class="hora">22:40</span> Roxana Carabajal</li>
+          <li><span class="hora">23:20</span> Claudio Acosta</li>
+          <li><span class="hora">00:00</span> Proyección Salamanca</li>
+          <li><span class="hora">00:30</span>

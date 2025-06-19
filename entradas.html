@@ -4,40 +4,39 @@
   <meta charset="UTF-8">
   <title>Sonidos de la Ciudad – Entradas</title>
   <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- 1. Cabecera con logo y título -->
+  <!-- Cabecera con logo y título -->
   <header>
     <h1>
-      <img
-        src="assets/img/logo.png"
-        alt="Logo Sonidos de la Ciudad"
-        width="150"
-        align="middle"
-      >
+      <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
       Sonidos de la Ciudad
     </h1>
     <p>Una experiencia sonora que recorre los rincones de Santiago del Estero.</p>
   </header>
 
-  <!-- 2. Navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="artistas.html">Artistas</a></li>
-      <li><a href="cronograma.html">Cronograma</a></li>
-      <li><a href="entradas.html">Entradas</a></li>
-      <li><a href="ubicacion.html">Ubicación</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- Menú de navegación sticky con iconos -->
+  <nav class="menu">
+    <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
+    <a href="index.html" class="menu__item"><i class="fa fa-home"></i> Inicio</a>
+    <a href="artistas.html" class="menu__item"><i class="fa fa-microphone"></i> Artistas</a>
+    <a href="cronograma.html" class="menu__item"><i class="fa fa-calendar"></i> Cronograma</a>
+    <a href="entradas.html" class="menu__item"><i class="fa fa-ticket"></i> Entradas</a>
+    <a href="ubicacion.html" class="menu__item"><i class="fa fa-map-marker-alt"></i> Ubicación</a>
+    <a href="contacto.html" class="menu__item"><i class="fa fa-envelope"></i> Contacto</a>
   </nav>
 
-  <!-- 3. Contenido principal: Tabla de precios de entradas -->
-  <main>
+  <!-- Contenido principal -->
+  <main class="container">
     <section id="entradas">
       <h2>Entradas y Precios</h2>
-      <table border="1" cellpadding="8" cellspacing="0">
+      <table>
         <thead>
           <tr>
             <th>Tipo de Entrada</th>
@@ -64,20 +63,21 @@
         </tbody>
       </table>
       <p><em>Los precios pueden variar. Consulta descuentos y promociones en taquilla y online.</em></p>
-    <p>
-    <strong>¿Listo para reservar?</strong><br>
-    <a 
-      href="https://www.ticketek.com.ar/musica/fiestas" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      Compra tus entradas aquí
-    </a>
-  </p>
-</section>
+      <div class="reserva-flex">
+        <span><strong>¿Listo para reservar?</strong></span>
+        <a 
+          href="https://www.ticketek.com.ar/musica/fiestas" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="btn"
+        >
+          <i class="fa fa-ticket"></i> Compra tus entradas aquí
+        </a>
+      </div>
+    </section>
   </main>
 
-  <!-- 4. Pie de página -->
+  <!-- Pie de página -->
   <footer>
     <p>&copy; 2025 Festival Sonidos de la Ciudad</p>
     <p><a href="mailto:info@festival.com">info@festival.com</a></p>

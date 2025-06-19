@@ -4,133 +4,124 @@
   <meta charset="UTF-8">
   <title>Festival Sonidos de la Ciudad – Inicio</title>
   <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-  <!-- 1. Cabecera con logo y título -->
-  <header style="position: relative; padding: 1em 2em;">
-  <!-- Logo + Título alineados a la izquierda -->
-  <h1 style="display: inline-block; margin: 0; vertical-align: middle;">
-    <img
-      src="assets/img/logo.png"
-      alt="Logo Sonidos de la Ciudad"
-      width="150"
-      style="vertical-align: middle;"
-    >
-    Festival Sonidos de la Ciudad
-  </h1>
+  <!-- Cabecera con logo y redes sociales -->
+  <header>
+    <h1>
+      <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
+      Festival Sonidos de la Ciudad
+    </h1>
+    <div class="redes">
+      <ul>
+        <li>
+          <a href="https://www.instagram.com/festivaldelasalamanca" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/FestivaldelaSalamanca" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/@LaSalamanca" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
-  <!-- Redes sociales alineadas arriba a la derecha -->
-  <div style="position: absolute; top: 1em; right: 2em;">
-    <ul style="list-style: none; margin: 0; padding: 0;">
-      <li style="display: inline; margin-left: 1em;">
-        <a href="https://www.instagram.com/festivaldelasalamanca" target="_blank" rel="noopener noreferrer">
-          Instagram
-        </a>
-      </li>
-      <li style="display: inline; margin-left: 1em;">
-        <a href="https://www.facebook.com/FestivaldelaSalamanca" target="_blank" rel="noopener noreferrer">
-          Facebook
-        </a>
-      </li>
-      <li style="display: inline; margin-left: 1em;">
-        <a href="https://twitter.com/@LaSalamanca" target="_blank" rel="noopener noreferrer">
-          Twitter
-        </a>
-      </li>
-    </ul>
-  </div>
-</header>
-
-
-
-  <!-- 2. Navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="artistas.html">Artistas</a></li>
-      <li><a href="cronograma.html">Cronograma</a></li>
-      <li><a href="entradas.html">Entradas</a></li>
-      <li><a href="ubicacion.html">Ubicación</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- Menú de navegación sticky con iconos -->
+  <nav class="menu" aria-label="Navegación principal">
+    <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo" />
+    <a href="index.html" class="menu__item"><i class="fa fa-home"></i> Inicio</a>
+    <a href="artistas.html" class="menu__item"><i class="fa fa-microphone"></i> Artistas</a>
+    <a href="cronograma.html" class="menu__item"><i class="fa fa-calendar"></i> Cronograma</a>
+    <a href="entradas.html" class="menu__item"><i class="fa fa-ticket"></i> Entradas</a>
+    <a href="ubicacion.html" class="menu__item"><i class="fa fa-map-marker-alt"></i> Ubicación</a>
+    <a href="contacto.html" class="menu__item"><i class="fa fa-envelope"></i> Contacto</a>
   </nav>
 
-  <!-- 3. Contenido principal -->
-  <main>
+  <!-- Contenido principal -->
+  <main class="container">
 
-    <!-- Sección de presentación con título, texto y trailer -->
-    <section id="presentacion">
+    <!-- Sección de presentación -->
+    <section id="presentacion" class="section section-presentacion">
       <h2>¡Bienvenidos a una nueva edición de nuestro ansiado festival!</h2>
       <p>
         Prepárate para sumergirte en la gran fiesta musical de Santiago del Estero.
         Sonidos de la Ciudad reúne a artistas locales y nacionales bajo un mismo
         cielo sonoro. Ritmos que emocionan, momentos que se quedan para siempre.
       </p>
-
+      <!-- Botón destacado de entradas -->
+      <div class="cta-entradas">
+        <a href="entradas.html" class="btn">
+          <i class="fa fa-ticket"></i> ¡Compra tus entradas!
+        </a>
+      </div>
       <!-- Trailer incrustado -->
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/hwvKO3qgaaI?start=6"
-        title="Trailer Festival Sonidos de la Ciudad"
-        frameborder="0"
-        allowfullscreen
-        style="display:block; margin: 1em 0;"
-      ></iframe>
-
+      <div class="video-trailer">
+        <iframe
+          class="video-youtube"
+          src="https://www.youtube.com/embed/hwvKO3qgaaI?start=6"
+          title="Trailer Festival Sonidos de la Ciudad"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
       <p><strong>¡No faltes!</strong> Te esperamos para compartir bandas en vivo, sabores de la región y la energía única de la ciudad.</p>
     </section>
 
-    <section id="audios-representativos">
-  <h2>Audios representativos</h2>
+    <!-- Galería rápida de artistas destacados -->
+    <section id="artistas-destacados" class="section section-artistas">
+      <h2>Artistas Destacados</h2>
+      <div class="galeria-artistas">
+        <img src="assets/img/artistas/abel_pintos.jpg" alt="Abel Pintos">
+        <img src="assets/img/artistas/sergio_galleguillo.jpg" alt="Sergio Galleguillo">
+        <img src="assets/img/artistas/chaqueño_palavecino.jpg" alt="Chaqueño Palavecino">
+        <img src="assets/img/artistas/nestor_garnica.jpg" alt="Néstor Garnica">
+      </div>
+      <div class="cta-artistas">
+        <a href="artistas.html" class="btn"><i class="fa fa-microphone"></i> Ver todos</a>
+      </div>
+    </section>
 
-  <!-- 1) Trailer promocional -->
-  <audio controls src="assets/audio/trailer_jingle.mp3"
-         style="display:block; margin:1em 0; width:100%; max-width:660px;">
-    Tu navegador no soporta audio en HTML5.
-  </audio>
+    <!-- Audios representativos -->
+    <section id="audios-representativos" class="section section-audios">
+      <h2>Audios representativos</h2>
+      <audio controls src="assets/audio/trailer_jingle.mp3">
+        Tu navegador no soporta audio en HTML5.
+      </audio>
+      <audio controls src="assets/audio/amor_salvaje.mp3">
+        Tu navegador no soporta audio en HTML5.
+      </audio>
+      <audio controls src="assets/audio/creo_en_ti.mp3">
+        Tu navegador no soporta audio en HTML5.
+      </audio>
+    </section>
 
-  <!-- 2) Fragmento “Amor Salvaje” -->
-  <audio controls src="assets/audio/amor_salvaje.mp3"
-         style="display:block; margin:1em 0; width:100%; max-width:660px;">
-    Tu navegador no soporta audio en HTML5.
-  </audio>
+    <!-- Widget de Instagram -->
+    <section id="redes-widget" class="section section-instagram">
+      <h2>Síguenos en Instagram</h2>
+      <blockquote class="instagram-media" data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/p/C1pBVOQRh9c/?utm_source=ig_embed&amp;utm_campaign=loading"
+        data-instgrm-version="14">
+      </blockquote>
+      <script async src="https://www.instagram.com/embed.js"></script>
+    </section>
 
-  <!-- 3) Fragmento “Creo en Ti” -->
-  <audio controls src="assets/audio/creo_en_ti.mp3"
-         style="display:block; margin:1em 0; width:100%; max-width:660px;">
-    Tu navegador no soporta audio en HTML5.
-  </audio>
-</section>
+  </main>
 
-
-
-  <!-- NUEVA SECCIÓN: Instagram Embed -->
-  <section id="redes-widget">
-    <h2>Síguenos en Instagram</h2>
-
-    <blockquote class="instagram-media" data-instgrm-captioned
-      data-instgrm-permalink="https://www.instagram.com/p/C1pBVOQRh9c/?utm_source=ig_embed&amp;utm_campaign=loading"
-      data-instgrm-version="14"
-      style=" background:#FFF; border:0; border-radius:3px;
-             box-shadow:0 0 1px 0 rgba(0,0,0,0.5),
-                        0 1px 10px 0 rgba(0,0,0,0.15);
-             margin: 1px; max-width:540px; min-width:326px;
-             padding:0; width:99.375%;
-             width:-webkit-calc(100% - 2px);
-             width:calc(100% - 2px);">
-      <!-- aquí va todo el contenido que Instagram generó -->
-    </blockquote>
-
-    <!-- Asegúrate que el script usa https -->
-    <script async src="https://www.instagram.com/embed.js"></script>
-  </section>
-
-
-</main>
-
-  <!-- 4. Pie de página -->
+  <!-- Pie de página -->
   <footer>
     <p>&copy; 2025 Festival Sonidos de la Ciudad</p>
     <p><a href="mailto:info@festival.com">info@festival.com</a></p>

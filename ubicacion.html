@@ -4,49 +4,55 @@
   <meta charset="UTF-8">
   <title>Sonidos de la Ciudad – Ubicación</title>
   <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Cabecera y logo -->
+  <!-- Cabecera con logo y título -->
   <header>
     <h1>
-      <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" width="150" align="middle">
+      <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
       Sonidos de la Ciudad
     </h1>
     <p>Una experiencia sonora que recorre los rincones de Santiago del Estero.</p>
   </header>
 
-  <!-- Navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="artistas.html">Artistas</a></li>
-      <li><a href="cronograma.html">Cronograma</a></li>
-      <li><a href="entradas.html">Entradas</a></li>
-      <li><a href="ubicacion.html">Ubicación</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- Menú de navegación sticky con iconos -->
+  <nav class="menu">
+    <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
+    <a href="index.html" class="menu__item"><i class="fa fa-home"></i> Inicio</a>
+    <a href="artistas.html" class="menu__item"><i class="fa fa-microphone"></i> Artistas</a>
+    <a href="cronograma.html" class="menu__item"><i class="fa fa-calendar"></i> Cronograma</a>
+    <a href="entradas.html" class="menu__item"><i class="fa fa-ticket"></i> Entradas</a>
+    <a href="ubicacion.html" class="menu__item"><i class="fa fa-map-marker-alt"></i> Ubicación</a>
+    <a href="contacto.html" class="menu__item"><i class="fa fa-envelope"></i> Contacto</a>
   </nav>
 
-  <!-- Mapa -->
-  <main>
-    <section id="ubicacion">
-      <h2>¿Dónde estamos?</h2>
-      <p>Club Atlético Sarmiento de La Banda, Santiago del Estero.</p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.5982190181344!2d-64.25089402523896!3d-27.729688927832527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943b53e3dde78ed9%3A0x841b940eb9276d54!2sClub%20Sarmiento%20La%20Banda!5e0!3m2!1ses-419!2sar!4v1747022599090!5m2!1ses-419!2sar"  
-        width="600"
-        height="450"
-        style="border:0; display:block; margin:1em auto;"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
-      <p>
-        <a href="https://maps.app.goo.gl/b6U7hAEpFJt19tJa9" target="_blank" rel="noopener noreferrer">
-          Ver en Google Maps
-        </a>
-      </p>
-    </section>
+  <!-- Mapa y datos de ubicación -->
+  <main class="container">
+    <div class="section">
+      <section id="ubicacion">
+        <h2>¿Dónde estamos?</h2>
+        <p>
+          <i class="fa fa-map-marker-alt"></i>
+          Club Atlético Sarmiento de La Banda, Santiago del Estero.
+        </p>
+        <iframe
+          class="mapa-ubicacion"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.5982190181344!2d-64.25089402523896!3d-27.729688927832527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943b53e3dde78ed9%3A0x841b940eb9276d54!2sClub%20Sarmiento%20La%20Banda!5e0!3m2!1ses-419!2sar!4v1747022599090!5m2!1ses-419!2$ar"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+        <p>
+          <a href="https://maps.app.goo.gl/b6U7hAEpFJt19tJa9" target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-map"></i> Ver en Google Maps
+          </a>
+        </p>
+      </section>
+    </div>
   </main>
 
   <!-- Pie de página -->

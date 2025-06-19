@@ -4,64 +4,60 @@
   <meta charset="UTF-8">
   <title>Sonidos de la Ciudad – Contacto</title>
   <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- 1. Cabecera y logo -->
+  <!-- Cabecera con logo y título -->
   <header>
     <h1>
-      <img
-        src="assets/img/logo.png"
-        alt="Logo Sonidos de la Ciudad"
-        width="150"
-        align="middle"
-      >
+      <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
       Sonidos de la Ciudad
     </h1>
     <p>Una experiencia sonora que recorre los rincones de Santiago del Estero.</p>
   </header>
 
-  <!-- 2. Navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="artistas.html">Artistas</a></li>
-      <li><a href="cronograma.html">Cronograma</a></li>
-      <li><a href="entradas.html">Entradas</a></li>
-      <li><a href="ubicacion.html">Ubicación</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- Menú de navegación sticky con iconos -->
+  <nav class="menu">
+    <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
+    <a href="index.html" class="menu__item"><i class="fa fa-home"></i> Inicio</a>
+    <a href="artistas.html" class="menu__item"><i class="fa fa-microphone"></i> Artistas</a>
+    <a href="cronograma.html" class="menu__item"><i class="fa fa-calendar"></i> Cronograma</a>
+    <a href="entradas.html" class="menu__item"><i class="fa fa-ticket"></i> Entradas</a>
+    <a href="ubicacion.html" class="menu__item"><i class="fa fa-map-marker-alt"></i> Ubicación</a>
+    <a href="contacto.html" class="menu__item"><i class="fa fa-envelope"></i> Contacto</a>
   </nav>
 
-  <!-- 3. Contenido principal: Formulario de contacto -->
-  <main>
+  <!-- Contenido principal: Formulario de contacto -->
+  <main class="container">
     <section id="contacto">
       <h2>Contáctanos</h2>
-      <form action="#" method="post">
-        <p>
-          <label for="nombre">Nombre:</label><br>
-          <input type="text" id="nombre" name="nombre" required>
-        </p>
-        <p>
-          <label for="email">Correo electrónico:</label><br>
-          <input type="email" id="email" name="email" required>
-        </p>
-        <p>
-          <label for="asunto">Asunto:</label><br>
-          <input type="text" id="asunto" name="asunto" required>
-        </p>
-        <p>
-          <label for="mensaje">Mensaje:</label><br>
-          <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
-        </p>
-        <p>
-          <button type="submit">Enviar</button>
-        </p>
-      </form>
+      <div class="section">
+        <form action="#" method="post" autocomplete="on">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="50" placeholder="Tu nombre">
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+
+          <label for="asunto">Asunto:</label>
+          <input type="text" id="asunto" name="asunto" required maxlength="100" placeholder="Motivo de tu mensaje">
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="6" required maxlength="500" placeholder="Escribe tu mensaje"></textarea>
+
+          <button type="submit" class="btn"><i class="fa fa-paper-plane"></i> Enviar</button>
+        </form>
+      </div>
+      <p>También puedes escribirnos a <a href="mailto:info@festival.com">info@festival.com</a></p>
     </section>
   </main>
 
-  <!-- 4. Pie de página -->
+  <!-- Pie de página -->
   <footer>
     <p>&copy; 2025 Festival Sonidos de la Ciudad</p>
     <p><a href="mailto:info@festival.com">info@festival.com</a></p>

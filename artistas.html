@@ -4,82 +4,65 @@
   <meta charset="UTF-8">
   <title>Sonidos de la Ciudad – Artistas</title>
   <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- 1. Cabecera con logo y título -->
+  <!-- Cabecera con logo y título -->
   <header>
     <h1>
-      <img
-        src="assets/img/logo.png"
-        alt="Logo Sonidos de la Ciudad"
-        width="150"
-        align="middle"
-      >
+      <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
       Sonidos de la Ciudad
     </h1>
     <p>Una experiencia sonora que recorre los rincones de Santiago del Estero.</p>
   </header>
 
-  <!-- 2. Navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="artistas.html">Artistas</a></li>
-      <li><a href="cronograma.html">Cronograma</a></li>
-      <li><a href="entradas.html">Entradas</a></li>
-      <li><a href="ubicacion.html">Ubicación</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- Menú de navegación sticky con iconos -->
+  <nav class="menu">
+    <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
+    <a href="index.html" class="menu__item"><i class="fa fa-home"></i> Inicio</a>
+    <a href="artistas.html" class="menu__item"><i class="fa fa-microphone"></i> Artistas</a>
+    <a href="cronograma.html" class="menu__item"><i class="fa fa-calendar"></i> Cronograma</a>
+    <a href="entradas.html" class="menu__item"><i class="fa fa-ticket"></i> Entradas</a>
+    <a href="ubicacion.html" class="menu__item"><i class="fa fa-map-marker-alt"></i> Ubicación</a>
+    <a href="contacto.html" class="menu__item"><i class="fa fa-envelope"></i> Contacto</a>
   </nav>
 
-  <!-- 3. Contenido principal: Artistas -->
-  <main>
+  <!-- Contenido principal: Artistas -->
+  <main class="container">
     <section id="artistas">
       <h2>Artistas Destacados</h2>
-      <ul>
-        <li>
-          <img
-            src="assets/img/artistas/abel_pintos.jpg"
-            alt="Abel Pintos"
-            width="120"
-          >
-          <p>Abel Pintos</p>
-        </li>
-        <li>
-          <img
-            src="assets/img/artistas/sergio_galleguillo.jpg"
-            alt="Sergio Galleguillo"
-            width="120"
-          >
-          <p>Sergio Galleguillo</p>
-        </li>
-        <li>
-          <img
-            src="assets/img/artistas/chaqueño_palavecino.jpg"
-            alt="Chaqueño Palavecino"
-            width="120"
-          >
-          <p>Chaqueño Palavecino</p>
-        </li>
-        <li>
-          <img
-            src="assets/img/artistas/nestor_garnica.jpg"
-            alt="Néstor Garnica"
-            width="120"
-          >
-          <p>Néstor Garnica</p>
-        </li>
-        <li>
-          <img
-            src="assets/img/artistas/peteco_carabajal.jpg"
-            alt="Peteco Carabajal"
-            width="120"
-          >
-          <p>Peteco Carabajal</p>
-        </li>
-      </ul>
-
+      <div class="galeria-artistas">
+        <div class="card">
+          <img src="assets/img/artistas/abel_pintos.jpg" alt="Abel Pintos" class="artista-img">
+          <h3>Abel Pintos</h3>
+          <p>Uno de los grandes referentes del folklore y la música popular argentina.</p>
+        </div>
+        <div class="card">
+          <img src="assets/img/artistas/sergio_galleguillo.jpg" alt="Sergio Galleguillo" class="artista-img">
+          <h3>Sergio Galleguillo</h3>
+          <p>Popular cantante riojano, famoso por su energía y sus clásicos del folklore.</p>
+        </div>
+        <div class="card">
+          <img src="assets/img/artistas/chaqueño_palavecino.jpg" alt="Chaqueño Palavecino" class="artista-img">
+          <h3>Chaqueño Palavecino</h3>
+          <p>Uno de los máximos exponentes del folklore argentino, reconocido por su voz y carisma.</p>
+        </div>
+        <div class="card">
+          <img src="assets/img/artistas/nestor_garnica.jpg" alt="Néstor Garnica" class="artista-img">
+          <h3>Néstor Garnica</h3>
+          <p>Violinista y compositor santiagueño, destacado en la música popular argentina.</p>
+        </div>
+        <div class="card">
+          <img src="assets/img/artistas/peteco_carabajal.jpg" alt="Peteco Carabajal" class="artista-img">
+          <h3>Peteco Carabajal</h3>
+          <p>Reconocido músico y compositor, símbolo de la chacarera y la música santiagueña.</p>
+        </div>
+      </div>
       <p>
         <strong>Y muchos más.</strong> Consulta el 
         <a href="cronograma.html">cronograma completo</a> 
@@ -88,7 +71,7 @@
     </section>
   </main>
 
-  <!-- 4. Pie de página -->
+  <!-- Pie de página -->
   <footer>
     <p>&copy; 2025 Festival Sonidos de la Ciudad</p>
     <p><a href="mailto:info@festival.com">info@festival.com</a></p>
