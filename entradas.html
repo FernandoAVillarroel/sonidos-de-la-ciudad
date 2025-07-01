@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Sonidos de la Ciudad – Entradas</title>
@@ -10,6 +11,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
   <!-- Cabecera con logo y título -->
@@ -32,49 +34,66 @@
     <a href="contacto.html" class="menu__item"><i class="fa fa-envelope"></i> Contacto</a>
   </nav>
 
-  <!-- Contenido principal -->
+  <!-- Contenido principal con flex para entradas y sorteo -->
   <main class="container">
-    <section id="entradas">
-      <h2>Entradas y Precios</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Tipo de Entrada</th>
-            <th>Precio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Entrada Diaria</td>
-            <td>$1.000</td>
-          </tr>
-          <tr>
-            <td>Abono Fin de Semana (3 días)</td>
-            <td>$2.500</td>
-          </tr>
-          <tr>
-            <td>Pase VIP</td>
-            <td>$4.000</td>
-          </tr>
-          <tr>
-            <td>Entrada Niños (hasta 12 años)</td>
-            <td>$500</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><em>Los precios pueden variar. Consulta descuentos y promociones en taquilla y online.</em></p>
-      <div class="reserva-flex">
-        <span><strong>¿Listo para reservar?</strong></span>
-        <a 
-          href="https://www.ticketek.com.ar/musica/fiestas" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="btn"
-        >
-          <i class="fa fa-ticket"></i> Compra tus entradas aquí
-        </a>
-      </div>
-    </section>
+    <div style="display:flex; gap:2em; align-items:flex-start; flex-wrap:wrap;">
+      <!-- Contenedor de Entradas y Precios -->
+      <section id="entradas" style="flex:2; min-width:300px;">
+        <h2>Entradas y Precios</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Evento</th>
+              <th>General</th>
+              <th>VIP</th>
+              <th>Palco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Concierto de rock</td>
+              <td>$1.500</td>
+              <td>$2.700</td>
+              <td>$3.750</td>
+            </tr>
+            <tr>
+              <td>Festival de Música Electrónica</td>
+              <td>$2.000</td>
+              <td>$3.600</td>
+              <td>$5.000</td>
+            </tr>
+            <tr>
+              <td>Noche de Jazz</td>
+              <td>$800</td>
+              <td>$1.440</td>
+              <td>$2.000</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><em>Los precios pueden variar. Consulta descuentos y promociones en taquilla y online.</em></p>
+        <div class="reserva-flex" style="margin-bottom:2em;">
+          <span><strong>¿Listo para reservar?</strong></span>
+          <a href="#" id="abrir-modal-entradas" class="btn">
+            <i class="fa fa-ticket"></i> Compra tus entradas aquí
+          </a>
+        </div>
+      </section>
+
+      <!-- Contenedor de Sorteo a la derecha -->
+      <aside id="sorteo"
+        style="flex:1; min-width:260px; background:#fffbe6; border:2px solid #ffd700; border-radius:1em; padding:1.5em; box-shadow:0 2px 10px #ffd70044;">
+        <h2 style="color:#b8860b;">¡Participa del Gran Sorteo!</h2>
+        <p>
+          Cuantas más entradas compres, <strong>más chances tienes de ganar</strong> un espectacular premio.<br>
+          ¡Cada entrada es una oportunidad!
+        </p>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:1em;">
+          <img id="img-sorteo" src="assets/img/autos/auto1.jpg" alt="Premio del sorteo"
+            style="max-width:220px; border-radius:1em; box-shadow:0 2px 10px #0002;">
+          <div style="font-size:1.1em; color:#444;">¡Mirá el premio que podés ganar!</div>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <!-- Pie de página -->
@@ -83,5 +102,92 @@
     <p><a href="mailto:info@festival.com">info@festival.com</a></p>
   </footer>
 
-</body>
-</html>
+  <!-- Modal de compra de entradas -->
+  <div id="modal-entradas" class="modal" style="display:none;">
+    <div class="modal-contenido">
+      <span class="modal-cerrar" id="cerrar-modal">&times;</span>
+      <h3>Compra tus entradas</h3>
+      <form id="form-entradas" autocomplete="off" action="php/enviar_compra.php" method="POST">
+        <fieldset>
+          <legend>Datos del Comprador</legend>
+          <label>Nombre completo:
+            <input type="text" name="nombre" required minlength="3" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" />
+          </label>
+          <label>Correo electrónico:
+            <input type="email" name="email" required />
+          </label>
+          <label>Número de teléfono:
+            <input type="text" name="telefono" required pattern="\d{10}" maxlength="10" />
+          </label>
+          <label>Fecha de nacimiento:
+            <input type="date" name="nacimiento" required />
+          </label>
+          <label>País de residencia:
+            <select name="pais" required>
+              <option value="">Selecciona un país</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Chile">Chile</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Brasil">Brasil</option>
+            </select>
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Datos del Evento</legend>
+          <label>Evento:
+            <select name="evento" id="evento-select" required></select>
+          </label>
+          <label>Fecha del Evento:
+            <input type="text" name="fecha_evento" id="fecha-evento" readonly />
+          </label>
+          <label>Ubicación:
+            <input type="text" name="ubicacion_evento" id="ubicacion-evento" readonly />
+          </label>
+          <label>Tipo de Entrada:
+            <select name="tipo_entrada" required>
+              <option value="General">General</option>
+              <option value="VIP">VIP</option>
+              <option value="Palco">Palco</option>
+            </select>
+          </label>
+          <label>Cantidad de Entradas:
+            <input type="number" name="cantidad" min="1" max="6" value="1" required />
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Datos de Pago</legend>
+          <label>Número de tarjeta:
+            <input type="text" name="tarjeta" required maxlength="16" pattern="\d{16}" />
+            <img id="img-tarjeta" style="height:32px;vertical-align:middle;display:none;margin-left:8px;">
+          </label>
+          <label>Fecha de vencimiento (MM/AA):
+            <input type="text" name="vencimiento" required placeholder="MM/AA" maxlength="5" />
+          </label>
+          <label>CVV:
+            <input type="text" name="cvv" required maxlength="4" pattern="\d{3,4}" />
+          </label>
+          <label>Nombre en la tarjeta:
+            <input type="text" name="nombre_tarjeta" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" />
+          </label>
+        </fieldset>
+        <input type="hidden" name="precio_total" id="precio_total_hidden" />
+        <button type="submit" class="btn">Comprar</button>
+        <div id="mensaje-formulario" style="margin-top:1em;"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de éxito -->
+  <div id="modal-exito" class="modal" style="display:none;">
+    <div class="modal-contenido" style="text-align:center;">
+      <span class="modal-cerrar" id="cerrar-modal-exito" style="float:right;cursor:pointer;">&times;</span>
+      <h3 style="color:green;">¡Compra realizada con éxito!</h3>
+      <p>Gracias por tu compra. Te esperamos en el evento.</p>
+      <button id="cerrar-modal-exito-btn" class="btn">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="js/validacion_compra.js"></script>
+  <script src="js/guardar_participantes.js"></script>
+  <script src="js/sorteo.js"></script>

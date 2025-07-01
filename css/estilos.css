@@ -233,6 +233,21 @@ button:hover, .btn:hover {
   box-shadow: 0 4px 16px #ff6f6144;
 }
 
+/* Desactiva animaciones y cambia el estilo cuando el botón está deshabilitado */
+button:disabled,
+.btn:disabled {
+  background: #ccc !important;
+  color: #888 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+  text-shadow: none !important;
+  border: none !important;
+  opacity: 0.7;
+  pointer-events: none !important;
+}
+
 /* Secciones principales */
 .section {
   margin-bottom: 2em;
@@ -409,6 +424,16 @@ input:focus, textarea:focus {
   outline: none;
 }
 
+/* Mensajes de validación */
+.mensaje-validacion {
+  min-height: 1.2em;
+  transition: color 0.3s;
+}
+.mensaje-general {
+  min-height: 1.2em;
+  transition: color 0.3s;
+}
+
 /* Footer */
 footer {
   background: linear-gradient(90deg, #ffb347 0%, #ff6f61 100%);
@@ -573,5 +598,474 @@ footer {
   th, td {
     padding: 0.5em;
     font-size: 1em;
+  }
+}
+
+/* Mensajes de validación */
+.mensaje-validacion {
+  min-height: 1.2em;
+  transition: color 0.3s;
+}
+.mensaje-general {
+  min-height: 1.2em;
+  transition: color 0.3s;
+}
+
+/* Modal para compra de entradas */
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-contenido {
+  background: #fff9b0;
+  padding: 2em;
+  border-radius: 1em;
+  max-width: 500px;
+  width: 95vw;
+  position: relative;
+  box-shadow: 0 4px 24px #ffb34788;
+}
+.modal-cerrar {
+  position: absolute;
+  top: 1em; right: 1em;
+  font-size: 2em;
+  color: #ff6f61;
+  cursor: pointer;
+  font-weight: bold;
+}
+.modal-contenido fieldset {
+  border: 1px solid #ffb347;
+  border-radius: 0.7em;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+.modal-contenido legend {
+  color: #ff6f61;
+  font-weight: bold;
+  padding: 0 0.5em;
+}
+.modal-contenido label {
+  display: block;
+  margin-bottom: 0.7em;
+  color: #22223b;
+}
+.modal-contenido input,
+.modal-contenido select {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.2em;
+  border-radius: 0.5em;
+  border: 1.5px solid #ffb347;
+  font-size: 1em;
+  background: #fff;
+  color: #22223b;
+}
+
+/* ...código existente... */
+
+/* Modal para compra de entradas - Mejoras para formularios largos y responsive */
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  overflow: auto;
+}
+
+.modal-contenido {
+  background: #fff9b0;
+  padding: 2em;
+  border-radius: 1em;
+  max-width: 500px;
+  width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 24px #ffb34788;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .modal-contenido {
+    padding: 1em;
+    max-width: 98vw;
+    max-height: 95vh;
+  }
+}
+
+/* Opcional: que el fondo de la página no se desplace cuando el modal está abierto */
+body.modal-abierto {
+  overflow: hidden;
+}
+
+/* MODAL DE COMPRA DE ENTRADAS VISUALMENTE ATRACTIVO */
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.55);
+  display: flex; align-items: center; justify-content: center;
+  overflow: auto;
+  animation: modalFadeIn 0.5s;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-contenido {
+  background: linear-gradient(135deg, #fff9b0 0%, #ffb347 100%);
+  padding: 2.5em 2em 2em 2em;
+  border-radius: 1.5em;
+  max-width: 500px;
+  width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 40px #ffb34788, 0 2px 16px #ff6f6144;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 3px solid #ff6f61;
+  animation: modalContentPop 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes modalContentPop {
+  0% { transform: scale(0.85) translateY(40px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 1em; right: 1em;
+  font-size: 2em;
+  color: #ff6f61;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s, transform 0.2s;
+}
+.modal-cerrar:hover {
+  color: #22223b;
+  transform: scale(1.2) rotate(10deg);
+}
+
+.modal-contenido h3 {
+  text-align: center;
+  color: #ff6f61;
+  margin-bottom: 1em;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #fff9b0aa;
+}
+
+.modal-contenido fieldset {
+  border: 2px solid #ffb347;
+  border-radius: 1em;
+  margin-bottom: 1.2em;
+  padding: 1.2em 1em 1em 1em;
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 2px 12px #ffb34733;
+  transition: box-shadow 0.3s;
+}
+.modal-contenido fieldset:hover {
+  box-shadow: 0 4px 24px #ffb34766;
+}
+
+.modal-contenido legend {
+  color: #ff6f61;
+  font-weight: bold;
+  padding: 0 0.5em;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  background: #fff9b0;
+  border-radius: 0.5em;
+  box-shadow: 0 1px 4px #ffb34733;
+}
+
+.modal-contenido label {
+  display: block;
+  margin-bottom: 0.9em;
+  color: #22223b;
+  font-weight: 600;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+}
+
+.modal-contenido input,
+.modal-contenido select {
+  width: 100%;
+  padding: 0.7em;
+  margin-top: 0.2em;
+  border-radius: 0.7em;
+  border: 2px solid #ffb347;
+  font-size: 1em;
+  background: #fff;
+  color: #22223b;
+  transition: border 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1px 4px #ffb34722;
+}
+.modal-contenido input:focus,
+.modal-contenido select:focus {
+  border: 2px solid #ff6f61;
+  box-shadow: 0 0 8px #a7ff83;
+  outline: none;
+}
+
+#img-tarjeta {
+  height: 32px;
+  vertical-align: middle;
+  display: none;
+  margin-left: 8px;
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s;
+  box-shadow: 0 2px 8px #ffb34755;
+  background: #fff;
+  border-radius: 0.5em;
+}
+input[name="tarjeta"]:focus + #img-tarjeta,
+#img-tarjeta[style*="inline-block"] {
+  transform: scale(1.12) rotate(-3deg);
+  box-shadow: 0 4px 16px #ffb34799;
+}
+
+.modal-contenido button.btn {
+  margin-top: 1.5em;
+  font-size: 1.2em;
+  padding: 0.9em 2.5em;
+  border-radius: 2em;
+  background: linear-gradient(90deg, #ffb347 0%, #ff6f61 100%);
+  color: #22223b;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #ffb34744;
+  transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.modal-contenido button.btn:hover {
+  background: var(--color-highlight);
+  color: var(--color-primary);
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 4px 16px #ff6f6144;
+}
+
+#mensaje-formulario {
+  margin-top: 1em;
+  min-height: 1.5em;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+/* Responsive para el modal */
+@media (max-width: 600px) {
+  .modal-contenido {
+    padding: 1em;
+    max-width: 98vw;
+    max-height: 95vh;
+    border-radius: 1em;
+  }
+  .modal-contenido h3 {
+    font-size: 1.3em;
+  }
+  .modal-contenido fieldset {
+    padding: 0.7em 0.5em 0.5em 0.5em;
+  }
+}
+
+/* Opcional: que el fondo de la página no se desplace cuando el modal está abierto */
+body.modal-abierto {
+  overflow: hidden;
+}
+
+/* Precio total destacado */
+#precio-total {
+  background: linear-gradient(90deg, #ffb347 0%, #fff9b0 100%);
+  color: #ff6f61;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-radius: 0.7em;
+  padding: 0.7em 1em;
+  margin: 1em 0 0.5em 0;
+  text-align: center;
+  box-shadow: 0 2px 8px #ffb34744;
+  letter-spacing: 1px;
+  border: 2px solid #ffb347;
+}
+
+/* Resumen de compra visual */
+#resumen-compra {
+  background: #fff;
+  border: 2px solid #ffb347;
+  border-radius: 0.7em;
+  padding: 1em 1.2em;
+  margin: 0.5em 0 1em 0;
+  color: #22223b;
+  font-size: 1.05em;
+  box-shadow: 0 2px 12px #ffb34733;
+  line-height: 1.6;
+}
+#resumen-compra strong {
+  color: #ff6f61;
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+/* Estilo para el contenedor de Entradas y Precios */
+#entradas {
+  background: linear-gradient(135deg, #fff9b0 0%, #ffb347 100%);
+  border-radius: 1.5em;
+  box-shadow: 0 4px 24px #ffb34755;
+  border: 2.5px solid #ff6f61;
+  padding: 2em 2em 1.5em 2em;
+  margin-bottom: 2em;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+#entradas:hover {
+  box-shadow: 0 8px 32px #ff6f6144, 0 2px 16px #ffb34744;
+  transform: translateY(-4px) scale(1.02);
+}
+#entradas h2 {
+  color: #ff6f61;
+  text-align: left;
+  margin-bottom: 1.2em;
+  text-shadow: 0 2px 8px #fff9b0aa;
+}
+#entradas table {
+  margin: 1.5em 0;
+  border-radius: 1em;
+  box-shadow: 0 2px 16px #ffb34733;
+  background: #fff;
+}
+#entradas th, #entradas td {
+  border-bottom: 2px solid #ffb347;
+}
+#entradas th {
+  background: #ffb347;
+  color: #22223b;
+}
+#entradas .reserva-flex {
+  margin-top: 2em;
+  justify-content: flex-end;
+}
+
+/* Mejoras para el contenedor del sorteo */
+#sorteo {
+  flex: 1;
+  min-width: 260px;
+  background: linear-gradient(135deg, #fff9b0 0%, #ffb347 100%);
+  border: 3px solid var(--color-primary);
+  border-radius: 1.5em;
+  padding: 2em;
+  box-shadow: 0 8px 32px rgba(255, 179, 71, 0.3);
+  transition: transform 0.4s, box-shadow 0.4s;
+  position: relative;
+  overflow: hidden;
+  animation: pulseSorteo 4s infinite alternate;
+}
+
+@keyframes pulseSorteo {
+  0% { box-shadow: 0 8px 32px rgba(255, 179, 71, 0.3); }
+  100% { box-shadow: 0 8px 48px rgba(255, 111, 97, 0.5); }
+}
+
+#sorteo::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: -10px;
+  right: -10px; bottom: -10px;
+  background: linear-gradient(45deg, 
+    transparent 45%, 
+    rgba(255, 249, 176, 0.7) 50%, 
+    transparent 55%);
+  background-size: 200% 200%;
+  animation: shine 3s infinite;
+  z-index: 0;
+  border-radius: 1.5em;
+}
+
+@keyframes shine {
+  0% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+#sorteo h2 {
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.8em;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(255, 249, 176, 0.8);
+  animation: titleTilt 5s infinite alternate;
+}
+
+@keyframes titleTilt {
+  0% { transform: rotate(-1deg); }
+  100% { transform: rotate(1deg); }
+}
+
+#sorteo p {
+  color: var(--color-text);
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+#sorteo strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+#img-sorteo {
+  max-width: 220px;
+  border-radius: 1em;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 3px solid var(--color-primary);
+  transition: transform 0.5s, box-shadow 0.5s;
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 0.5em;
+}
+
+#img-sorteo:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 12px 32px rgba(255, 111, 97, 0.4);
+}
+
+.btn-sorteo:hover {
+  background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 111, 97, 0.5);
+}
+
+/* Efecto de confeti (puedes activarlo con JavaScript al participar) */
+.confeti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-highlight);
+  opacity: 0;
+  z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #sorteo {
+    margin-top: 2em;
+  }
+  
+  #img-sorteo {
+    max-width: 180px;
   }
 }
