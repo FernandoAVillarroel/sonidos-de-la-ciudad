@@ -46,8 +46,10 @@ header {
 }
 header .logo,
 .logo-header {
-  width: 60px;
-  margin-bottom: 0.5em;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0;
   filter: drop-shadow(0 0 10px var(--color-secondary));
   animation: logoPulse 2s infinite alternate;
 }
